@@ -41,6 +41,16 @@ async def on_message(message):
                 await message.channel.send( message.author.name + "ーー！！　大事なコンサートほっぽりだして何やってんだよー！")
             elif num == 5:
                 await message.channel.send("フゥ…やっとミラノに帰れるんだ…　あれ？あんなところにお菓子が落ちてるぞ。もったいないなあ…　あれ？船が動きだして…　わーーー" + message.author.name + "ーーーー!!!")
+    if message.content == "!friend":
+        try:
+            voich = await discord.VoiceChannel.connect(message.author.voice.channel)
+            voice_client = message.guild.voice_client
+            source = discord.FFmpegPCMAudio(str(5)+".mp3")
+            voice_client.play(source)
+            time.sleep(2)
+            await voich.disconnect()
+        except AttributeError:
+            await message.channel.send(message.author.name + "。ボクたち、友達だろ？")
 
 
 client.run(token)
