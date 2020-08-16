@@ -50,7 +50,12 @@ async def on_message(message):
             time.sleep(2)
             await voich.disconnect()
         except AttributeError:
-            await message.channel.send(message.author.name + "。ボクたち、友達だろ？")
+            num = random.randint(1, 10)
+            if num == 1:
+                await message.channel.send("フォルゴレ、いくよ!!!　僕の友達を、ここまでひどい目にあわせた" + message.author.name + "を、ケチョンケチョンにやっつけてやるんだ!!")
+            else:
+                await message.channel.send(message.author.name + "。ボクたち、友達だろ？")
 
+            
 
 client.run(token)
