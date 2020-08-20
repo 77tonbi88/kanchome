@@ -55,6 +55,16 @@ async def on_message(message):
                 await message.channel.send("フォルゴレ、いくよ!!!　僕の友達を、ここまでひどい目にあわせた" + message.author.name + "を、ケチョンケチョンにやっつけてやるんだ!!")
             else:
                 await message.channel.send(message.author.name + "。ボクたち、友達だろ？")
+    if message.content == "!mon":
+        try:
+            voich = await discord.VoiceChannel.connect(message.author.voice.channel)
+            voice_client = message.guild.voice_client
+            source = discord.FFmpegPCMAudio("mon.mp3")
+            voice_client.play(source)
+            time.sleep(20)
+            await voich.disconnect()
+        except AttributeError:
+            await message.channel.send("GG!")
 
             
 
