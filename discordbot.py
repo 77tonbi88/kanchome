@@ -61,7 +61,7 @@ async def on_message(message):
             voice_client = message.guild.voice_client
             source = discord.FFmpegPCMAudio("mon.mp3")
             voice_client.play(source)
-            time.sleep(20)
+            time.sleep(19)
             await voich.disconnect()
         except AttributeError:
             await message.channel.send("GG!")
