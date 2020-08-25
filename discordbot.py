@@ -65,6 +65,38 @@ async def on_message(message):
             await voich.disconnect()
         except AttributeError:
             await message.channel.send("GG!")
+    if message.content == "!hotaru":
+        try:
+            voich = await discord.VoiceChannel.connect(message.author.voice.channel)
+            voice_client = message.guild.voice_client
+            source = discord.FFmpegPCMAudio("hotaru.mp3")
+            voice_client.play(source)
+            time.sleep(35)
+            await voich.disconnect()
+        except AttributeError:
+            await message.channel.send("お疲れ!" + message.author.name + "!")
+    if message.content == "!hotaru-full":
+        try:
+            voich = await discord.VoiceChannel.connect(message.author.voice.channel)
+            voice_client = message.guild.voice_client
+            source = discord.FFmpegPCMAudio("hotaru_full.mp3")
+            voice_client.play(source)
+            time.sleep(212)
+            await voich.disconnect()
+        except AttributeError:
+            await message.channel.send("この曲ちょっと長くない？")
+    if message.content == "!hotaru-nare":
+        try:
+            voich = await discord.VoiceChannel.connect(message.author.voice.channel)
+            voice_client = message.guild.voice_client
+            source = discord.FFmpegPCMAudio("nare.mp3")
+            voice_client.play(source)
+            time.sleep(35)
+            await voich.disconnect()
+        except AttributeError:
+            await message.channel.send("ふわあ…" + message.author.name + "、今日はもう寝ないかい？僕もう眠いんだ…")
+
+
 
             
 
