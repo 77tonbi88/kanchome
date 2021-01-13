@@ -97,7 +97,7 @@ async def on_message(message):
             num = random.randint(1, 100)
             if num == 10:
                 await message.channel.send(":left_facing_fist: :rage: :right_facing_fist: ")
-            else
+            else:
                 await message.channel.send(":last_quarter_moon_with_face: :woozy_face: :first_quarter_moon_with_face: ")
 
 
