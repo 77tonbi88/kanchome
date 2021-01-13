@@ -85,6 +85,16 @@ async def on_message(message):
             await voich.disconnect()
         except AttributeError:
             await message.channel.send("ふわあ…" + message.author.name + "、今日はもう寝ないかい？僕もう眠いんだ…")
+    if message.content == "!gururi":
+        try:
+            voich = await discord.VoiceChannel.connect(message.author.voice.channel)
+            voice_client = message.guild.voice_client
+            source = discord.FFmpegPCMAudio("gururi.mp3")
+            voice_client.play(source)
+            time.sleep(31)
+            await voich.disconnect()
+        except AttributeError:
+            await message.channel.send(":last_quarter_moon_with_face: :woozy_face: :first_quarter_moon_with_face: ")
 
 
 
