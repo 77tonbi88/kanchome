@@ -101,7 +101,4 @@ async def on_message(message):
                 await message.channel.send(":last_quarter_moon_with_face: :woozy_face: :first_quarter_moon_with_face: ")
 
 
-
-            
-
 client.run(token)
