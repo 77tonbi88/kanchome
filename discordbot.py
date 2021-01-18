@@ -113,7 +113,6 @@ async def on_message(message):
         try:
             voich = await discord.VoiceChannel.connect(message.author.voice.channel)
             voice_client = message.guild.voice_client
-            voice_client.play(source)
             time.sleep(1)
             message.channel.send("今井…恭平")
             await voich.disconnect()
