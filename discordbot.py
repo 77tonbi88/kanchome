@@ -110,10 +110,7 @@ async def on_message(message):
             else:
                 await message.channel.send(":last_quarter_moon_with_face: :woozy_face: :first_quarter_moon_with_face: ")
     if message.content == "!imai":
-        try:
-            message.channel.send("今井…恭平")
-        except AttributeError:
-            await message.channel.send("今井…恭平")
+        await message.channel.send("今井…恭平")
 
 
 client.run(token)
