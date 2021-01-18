@@ -85,6 +85,16 @@ async def on_message(message):
             await voich.disconnect()
         except AttributeError:
             await message.channel.send("ふわあ…" + message.author.name + "、今日はもう寝ないかい？僕もう眠いんだ…")
+   　if message.content == "!fuck":
+        try:
+            voich = await discord.VoiceChannel.connect(message.author.voice.channel)
+            voice_client = message.guild.voice_client
+            source = discord.FFmpegPCMAudio("fuck_you_bitch.mp3")
+            voice_client.play(source)
+            time.sleep(10)
+            await voich.disconnect()
+        except AttributeError:
+            await message.channel.send("Fuck you bitch!! Fuck you mother!!")
     if message.content == "!gururi":
         try:
             voich = await discord.VoiceChannel.connect(message.author.voice.channel)
