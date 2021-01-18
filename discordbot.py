@@ -111,11 +111,7 @@ async def on_message(message):
                 await message.channel.send(":last_quarter_moon_with_face: :woozy_face: :first_quarter_moon_with_face: ")
     if message.content == "!imai":
         try:
-            voich = await discord.VoiceChannel.connect(message.author.voice.channel)
-            voice_client = message.guild.voice_client
-            time.sleep(1)
             message.channel.send("今井…恭平")
-            await voich.disconnect()
         except AttributeError:
             await message.channel.send("今井…恭平")
 
