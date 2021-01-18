@@ -113,6 +113,8 @@ async def on_message(message):
         await message.channel.send("今井…恭平")
     if message.content == "!ono":
         await message.channel.send("小野...ヒデアキ")
+    if message.content == "!kodera":
+        await message.channel.send("コデラ...")
 
 
 client.run(token)
