@@ -111,6 +111,8 @@ async def on_message(message):
                 await message.channel.send(":last_quarter_moon_with_face: :woozy_face: :first_quarter_moon_with_face: ")
     if message.content == "!imai":
         await message.channel.send("今井…恭平")
+    if message.content == "!ono":
+        await message.channel.send("小野...ヒデアキ")
 
 
 client.run(token)
