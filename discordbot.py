@@ -85,7 +85,7 @@ async def on_message(message):
             await voich.disconnect()
         except AttributeError:
             await message.channel.send("ふわあ…" + message.author.name + "、今日はもう寝ないかい？僕もう眠いんだ…")
-   　if message.content == "!fuck":
+    if message.content == "!fuck":
         try:
             voich = await discord.VoiceChannel.connect(message.author.voice.channel)
             voice_client = message.guild.voice_client
