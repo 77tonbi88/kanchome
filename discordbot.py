@@ -116,13 +116,15 @@ async def on_message(message):
     if message.content == "!kodera":
         await message.channel.send("コデラ...")
     if message.content == "!katayama":
-        num = random.randint(1, 3)
+        num = random.randint(1, 4)
         if num == 1:
             await message.channel.send("？？「ツインテールは殴るとき掴みやすい」")
         elif num == 2:
-            await message.channel.send("？？「うちがあいてになったる！」…")
+            await message.channel.send("？？「うちがあいてになったる！」")
         elif num == 3:
-            await message.channel.send("？？「居候と仲良し」")
+            await message.channel.send("？？「女は殴るためにいる」")
+        elif num == 4:
+            await message.channel.send("？？「女はサンドバック」")
 
 
 client.run(token)
