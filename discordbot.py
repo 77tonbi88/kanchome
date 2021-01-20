@@ -118,13 +118,24 @@ async def on_message(message):
     if message.content == "!katayama":
         num = random.randint(1, 4)
         if num == 1:
-            await message.channel.send("？？「ツインテールは殴るとき掴みやすい」")
+            voich = await discord.VoiceChannel.connect(message.author.voice.channel)
+            voice_client = message.guild.voice_client
+            source = discord.FFmpegPCMAudio("onnna.mp3")
+            voice_client.play(source)
+            time.sleep(20)
+            message.channel.send("？？「ツインテールは殴るとき掴みやすい」")
+            await voich.disconnect()
         elif num == 2:
             await message.channel.send("？？「うちがあいてになったる！」")
         elif num == 3:
             await message.channel.send("？？「女は殴るためにいる」")
         elif num == 4:
             await message.channel.send("？？「女はサンドバック」")
-
+    if message.content == "!yamanaka":
+        num = random.randint(1, 2)
+        if num == 1:
+            await message.channel.send("？？「デブでしか抜けん」")
+        elif num == 2:
+            await message.channel.send("？？「中学生時代のあだ名は歩く18禁」")
 
 client.run(token)
