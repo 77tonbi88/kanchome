@@ -122,7 +122,7 @@ async def on_message(message):
             voice_client = message.guild.voice_client
             source = discord.FFmpegPCMAudio("onnna.mp3")
             voice_client.play(source)
-            time.sleep(20)
+            time.sleep(10)
             message.channel.send("？？「ツインテールは殴るとき掴みやすい」")
             await voich.disconnect()
         elif num == 2:
