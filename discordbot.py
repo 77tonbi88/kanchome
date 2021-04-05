@@ -38,7 +38,7 @@ async def on_message(message):
             elif num == 3:
                 await message.channel.send("おはよう" + message.author.name + "！" + message.author.name + "は今朝もカッコイイぜ！")
             elif num == 4:
-                await message.channel.send( message.author.name + "ーー！！　大事なコンサートほっぽりだして何やってんだよー！")
+                await message.channel.send( message.author.name +"ーー！！ 大事なコンサートほっぽりだして何やってんだよー！")
             elif num == 5:
                 await message.channel.send("フゥ…やっとミラノに帰れるんだ…　あれ？あんなところにお菓子が落ちてるぞ。もったいないなあ…　あれ？船が動きだして…　わーーー" + message.author.name + "ーーーー!!!")
     if message.content == "!friend":
