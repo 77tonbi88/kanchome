@@ -163,9 +163,10 @@ async def on_message(message):
         try:
             if discord.utils.get(message.author.roles):
                 await message.channel.send("これはデバックです1")
-                async for msg in channel.history():
-                    await message.channel.send(msg)
-                    #await TextChannel.delete_messages(msg)
+                #async for msg in channel.history().get():
+                msg = channel.history().get()
+                await message.channel.send(msg)
+                #await TextChannel.delete_messages(msg)
                 await message.channel.send("削除が完了しました")
             else:
                 await message.channel.send("権限がありません")
