@@ -114,7 +114,7 @@ async def on_message(message):
     if message.content == "!ono":
         await message.channel.send("小野...ヒデアキ")
     if message.content == "!kodera":
-        await message.channel.send("コデラ...6")
+        await message.channel.send("コデラ...7")
     if message.content == "!katayama1":
         try:
             voich = await discord.VoiceChannel.connect(message.author.voice.channel)
@@ -161,7 +161,7 @@ async def on_message(message):
             await message.channel.send("？？「中学生時代のあだ名は歩く18禁」")
     if message.content == "!delchat":
         try:
-            if discord.utils.get(message.author.roles, name="admin"):
+            if discord.utils.get(message.author.roles):
                 #delcmd = message.content
                 #delcmd_ = delcmd.split()
                 #delcmd_int = int(delcmd_[1])
@@ -171,10 +171,10 @@ async def on_message(message):
                 if delcmd_c == 2 and delcmd_int <= 50 and delcmd_int > 1:
                     msgs = [msg async for msg in client.logs_from(message.channel, limit=(delcmd_int + 1 ))]
                     await client.delete_message(msgs)
-                await message.channel.send("削除が完了しました6")
+                await message.channel.send("削除が完了しました7")
             else:
-                await message.channel.send("権限がありません6")
+                await message.channel.send("権限がありません7")
         except AttributeError:
-            await message.channel.send("うまくいかなかったよ～")
+            await message.channel.send("うまくいかなかったよ～7")
 
 client.run(token)
