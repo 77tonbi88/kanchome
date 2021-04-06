@@ -135,7 +135,7 @@ async def on_message(message):
             await voich.disconnect()
         except AttributeError:
             await message.channel.send("？？「女はサンドバック」")
-    if message.content.startwith == "!katayama":
+    if message.content == "!katayama":
         num = random.randint(1, 4)
         if num == 1:
             try:
@@ -159,14 +159,15 @@ async def on_message(message):
             await message.channel.send("？？「デブでしか抜けん」")
         elif num == 2:
             await message.channel.send("？？「中学生時代のあだ名は歩く18禁」")
-    if message.content.startwith == '!delchat ':
-        await message.channel.send("通ってます！")
+    if message.content == "!delchat":
         try:
             if discord.utils.get(message.author.roles, name="admin"):
-                delcmd = message.content
-                delcmd_ = delcmd.split()
-                delcmd_int = int(delcmd_[1])
-                delcmd_c = len(delcmd_)
+                #delcmd = message.content
+                #delcmd_ = delcmd.split()
+                #delcmd_int = int(delcmd_[1])
+                #delcmd_c = len(delcmd_)
+                delcmd_int = 10
+                delcmd_c = 2
                 if delcmd_c == 2 and delcmd_int <= 50 and delcmd_int > 1:
                     msgs = [msg async for msg in client.logs_from(message.channel, limit=(delcmd_int + 1 ))]
                     await client.delete_message(msgs)
