@@ -160,6 +160,7 @@ async def on_message(message):
         elif num == 2:
             await message.channel.send("？？「中学生時代のあだ名は歩く18禁」")
     if message.content == "!delchat ":
+        await message.channel.send("検知はしてるよ！")
         if discord.utils.get(message.author.roles, name="admin"):
             delcmd = message.content
             delcmd_ = delcmd.split()
@@ -167,18 +168,17 @@ async def on_message(message):
             delcmd_c = len(delcmd_)
             if delcmd_c == 2 and delcmd_int <= 50 and delcmd_int > 1:
                 msgs = [msg async for msg in client.logs_from(message.channel, limit=(delcmd_int+1))]
-                await client.delete_messages(msgs)
-                delmsg = await client.send_message(message.channel, '削除が完了しました')
+                await message.delete(msgs)
+                delmsg = await message.channel.send("削除が完了しました")
                 time.sleep(5)
-                await client.delete_message(delmsg)
+                await message.delete(delmsg)
             else:
-                delmsg = await client.send_message(message.channel, "コマンドが間違っています。[!delchat *] *:2～50")
+                delmsg = await message.channel.send("2~50の範囲で入力してね")
                 time.sleep(5)
-                await client.delete_message(delmsg)
-
+                await message.delete(delmsg)
         else:
-            delmsg = await client.send_message(message.channel, "admin権限がありません。")
-            time.sleep(10)
-            await client.delete_message(delmsg)
+            delmsg = await message.channel.send("権限がなかったよ")
+            time.sleep(5)
+            await message.delete(delmsg)
 
 client.run(token)
