@@ -164,8 +164,8 @@ async def on_message(message):
             if discord.utils.get(message.author.roles):
                 await message.channel.send("これはデバックです1")
                 #async for msg in channel.history().get():
-                msg = message.channel.history().get()
-                msgs = await channel.history().flatten()
+                #msg = message.channel.history().get()
+                msgs = await message.channel.history().flatten()
                 for msg in msgs:
                     await message.channel.send(msg)
                 #await TextChannel.delete_messages(msg)
