@@ -114,7 +114,7 @@ async def on_message(message):
     if message.content == "!ono":
         await message.channel.send("小野...ヒデアキ")
     if message.content == "!kodera":
-        await message.channel.send("コデラ...8")
+        await message.channel.send("コデラ...9")
     if message.content == "!katayama1":
         try:
             voich = await discord.VoiceChannel.connect(message.author.voice.channel)
@@ -176,7 +176,7 @@ async def on_message(message):
                 async for x in client.logs_from( massage.channel , limit = delcmd_int):
                     mgs.append( x )
                 await message.channel.send("これはデバックです3")
-                await client.message.delete(mgs)
+                await message.channel.delete(mgs)
                 await message.channel.send("削除が完了しました7")
             else:
                 await message.channel.send("権限がありません7")
