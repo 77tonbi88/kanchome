@@ -135,7 +135,7 @@ async def on_message(message):
             await voich.disconnect()
         except AttributeError:
             await message.channel.send("？？「女はサンドバック」")
-    if message.content == "!katayama":
+    if message.content.startwith == "!katayama":
         num = random.randint(1, 4)
         if num == 1:
             try:
