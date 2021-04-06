@@ -166,7 +166,7 @@ async def on_message(message):
                 #msgs = await message.channel.history().flatten()
                 #await message.channel.send(msg)
                 #await client.delete_messages(msg)
-                messages = await message.channel.messages.fetch({ limit: 5 });
+                messages = await message.channel.messages.fetch(5);
                 message.channel.bulkDelete(messages);
                 await message.channel.send("削除が完了しました")
             else:
