@@ -114,7 +114,7 @@ async def on_message(message):
     if message.content == "!ono":
         await message.channel.send("小野...ヒデアキ")
     if message.content == "!kodera":
-        await message.channel.send("コデラ...15")
+        await message.channel.send("コデラ...16")
     if message.content == "!katayama1":
         try:
             voich = await discord.VoiceChannel.connect(message.author.voice.channel)
@@ -165,7 +165,7 @@ async def on_message(message):
                 await message.channel.send("これはデバックです1")
                 #async for msg in channel.history().get():
                 #msg = message.channel.history().get()
-                msg = await message.channel.history().get(author = client.user)
+                msg = message.channel.history().get(author = client.user)
                 await message.channel.send(msg)
                 await client.delete_messages(msg)
                 await message.channel.send("削除が完了しました")
