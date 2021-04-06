@@ -25,7 +25,7 @@ async def on_message(message):
             voich = await discord.VoiceChannel.connect(message.author.voice.channel)
             voice_client = message.guild.voice_client
             num = random.randint(1, 5)
-            source = discord.FFmpegPCMAudio( str(num) + ".mp3")
+            source = discord.FFmpegPCMAudio( str( num ) + ".mp3")
             voice_client.play(source)
             time.sleep(2)
             await voich.disconnect()
@@ -38,7 +38,7 @@ async def on_message(message):
             elif num == 3:
                 await message.channel.send("おはよう" + message.author.name + "！" + message.author.name + "は今朝もカッコイイぜ！")
             elif num == 4:
-                await message.channel.send( message.author.name + "ーー！！ 大事なコンサートほっぽりだして何やってんだよー！")
+                await message.channel.send( message.author.name + "ーー！！ 大事なコンサートほっぽりだして何やってんだよー！" )
             elif num == 5:
                 await message.channel.send("フゥ…やっとミラノに帰れるんだ…　あれ？あんなところにお菓子が落ちてるぞ。もったいないなあ…　あれ？船が動きだして…　わーーー" + message.author.name + "ーーーー!!!")
     if message.content == "!friend":
@@ -161,7 +161,7 @@ async def on_message(message):
             await message.channel.send("？？「中学生時代のあだ名は歩く18禁」")
     if message.content == "!delchat":
         try:
-            message.delete
+            message.delete()
             await message.channel.send("削除が完了しました")
         except AttributeError:
             await message.channel.send("うまくいかなかったよ～")
