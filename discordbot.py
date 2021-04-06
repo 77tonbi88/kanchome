@@ -162,21 +162,12 @@ async def on_message(message):
     if message.content == "!delchat":
         try:
             if discord.utils.get(message.author.roles):
-                #delcmd = message.content
-                #delcmd_ = delcmd.split()
-                #delcmd_int = int(delcmd_[1])
-                #delcmd_c = len(delcmd_)
-                delcmd_int = 10
-                delcmd_c = 2
                 await message.channel.send("これはデバックです1")
-                #if delcmd_c == 2 and delcmd_int <= 50 and delcmd_int > 1:
-                await message.channel.send("これはデバックです2")
-                #msgs = [msg async for msg in client.logs_from(message.channel, limit=(delcmd_int + 1 ))]
                 msgs = []
-                async for x in client.logs_from( massage.channel , limit = delcmd_int):
-                    mgs.append( x )
+                async for x in client.logs_from( massage.channel , limit = 5):
+                    msgs.append(x)
                 await message.channel.send("これはデバックです3")
-                await message.channel.delete(mgs)
+                await message.channel.delete(msgs)
                 await message.channel.send("削除が完了しました7")
             else:
                 await message.channel.send("権限がありません7")
