@@ -169,11 +169,14 @@ async def on_message(message):
                 delcmd_int = 10
                 delcmd_c = 2
                 await message.channel.send("これはデバックです1")
-                if delcmd_c == 2 and delcmd_int <= 50 and delcmd_int > 1:
-                    await message.channel.send("これはデバックです2")
-                    msgs = [msg async for msg in client.logs_from(message.channel, limit=(delcmd_int + 1 ))]
-                    await message.channel.send("これはデバックです3")
-                    await delete_message(msgs)
+                #if delcmd_c == 2 and delcmd_int <= 50 and delcmd_int > 1:
+                await message.channel.send("これはデバックです2")
+                #msgs = [msg async for msg in client.logs_from(message.channel, limit=(delcmd_int + 1 ))]
+                msgs = []
+                async for x in client.losg_from(client.massage.channel , limit = delcmd_int )
+                    mgs.append(x)
+                await message.channel.send("これはデバックです3")
+                await client.message.delete(mgs)
                 await message.channel.send("削除が完了しました7")
             else:
                 await message.channel.send("権限がありません7")
