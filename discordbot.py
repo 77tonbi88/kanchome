@@ -159,14 +159,16 @@ async def on_message(message):
             await message.channel.send("？？「デブでしか抜けん」")
         elif num == 2:
             await message.channel.send("？？「中学生時代のあだ名は歩く18禁」")
-    if message.content == "!delchat":
+    if message.content.startwith == "!delchat ":
         try:
-            message.delete()
-            message.delete()
-            message.delete()
-            message.delete()
-            message.delete()
-            await message.channel.send("削除が完了しました2")
+            delcmd = message.content
+            delcmd_ = delcmd.split()
+            delcmd_int = int(delcmd_[1])
+            delcmd_c = len(delcmd_)
+            if delcmd_c == 2 and delcmd_int <= 50 and delcmd_int > 1:
+                msgs = [msg async for msg in client.logs_from(message.channel, limit = (delcmd_int + 1 ))]
+                await client.message.delete(msgs)
+            await message.channel.send("削除が完了しました3")
         except AttributeError:
             await message.channel.send("うまくいかなかったよ～")
 
