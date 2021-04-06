@@ -25,7 +25,7 @@ async def on_message(message):
             voich = await discord.VoiceChannel.connect(message.author.voice.channel)
             voice_client = message.guild.voice_client
             num = random.randint(1, 5)
-            source = discord.FFmpegPCMAudio(str(num) + ".mp3" )
+            source = discord.FFmpegPCMAudio(str(num) + ".mp3")
             voice_client.play(source)
             time.sleep(2)
             await voich.disconnect()
@@ -173,8 +173,8 @@ async def on_message(message):
                 await message.channel.send("これはデバックです2")
                 #msgs = [msg async for msg in client.logs_from(message.channel, limit=(delcmd_int + 1 ))]
                 msgs = []
-                async for x in client.losg_from(client.massage.channel , limit = delcmd_int )
-                    mgs.append(x)
+                async for x in client.logs_from( massage.channel , limit = delcmd_int):
+                    mgs.append( x )
                 await message.channel.send("これはデバックです3")
                 await client.message.delete(mgs)
                 await message.channel.send("削除が完了しました7")
