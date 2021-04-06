@@ -25,7 +25,7 @@ async def on_message(message):
             voich = await discord.VoiceChannel.connect(message.author.voice.channel)
             voice_client = message.guild.voice_client
             num = random.randint(1, 5)
-            source = discord.FFmpegPCMAudio(str(num)+".mp3")
+            source = discord.FFmpegPCMAudio( str(num) + ".mp3")
             voice_client.play(source)
             time.sleep(2)
             await voich.disconnect()
@@ -38,14 +38,14 @@ async def on_message(message):
             elif num == 3:
                 await message.channel.send("おはよう" + message.author.name + "！" + message.author.name + "は今朝もカッコイイぜ！")
             elif num == 4:
-                await message.channel.send( message.author.name +"ーー！！ 大事なコンサートほっぽりだして何やってんだよー！")
+                await message.channel.send( message.author.name + "ーー！！ 大事なコンサートほっぽりだして何やってんだよー！")
             elif num == 5:
                 await message.channel.send("フゥ…やっとミラノに帰れるんだ…　あれ？あんなところにお菓子が落ちてるぞ。もったいないなあ…　あれ？船が動きだして…　わーーー" + message.author.name + "ーーーー!!!")
     if message.content == "!friend":
         try:
             voich = await discord.VoiceChannel.connect(message.author.voice.channel)
             voice_client = message.guild.voice_client
-            source = discord.FFmpegPCMAudio(str(5)+".mp3")
+            source = discord.FFmpegPCMAudio(str(5) + ".mp3")
             voice_client.play(source)
             time.sleep(2)
             await voich.disconnect()
@@ -159,26 +159,11 @@ async def on_message(message):
             await message.channel.send("？？「デブでしか抜けん」")
         elif num == 2:
             await message.channel.send("？？「中学生時代のあだ名は歩く18禁」")
-    if message.content == "!delchat ":
-        await message.channel.send("検知はしてるよ！")
-        if discord.utils.get(message.author.roles, name="admin"):
-            delcmd = message.content
-            delcmd_ = delcmd.split()
-            delcmd_int = int(delcmd_[1])
-            delcmd_c = len(delcmd_)
-            if delcmd_c == 2 and delcmd_int <= 50 and delcmd_int > 1:
-                msgs = [msg async for msg in client.logs_from(message.channel, limit=(delcmd_int+1))]
-                await message.delete(msgs)
-                delmsg = await message.channel.send("削除が完了しました")
-                time.sleep(5)
-                await message.delete(delmsg)
-            else:
-                delmsg = await message.channel.send("2~50の範囲で入力してね")
-                time.sleep(5)
-                await message.delete(delmsg)
-        else:
-            delmsg = await message.channel.send("権限がなかったよ")
-            time.sleep(5)
-            await message.delete(delmsg)
+    if message.content == "!delchat":
+        try:
+            message.delete
+            await message.channel.send("削除が完了しました")
+        except AttributeError:
+            await message.channel.send("うまくいかなかったよ～")
 
 client.run(token)
