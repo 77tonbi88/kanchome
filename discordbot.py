@@ -25,7 +25,7 @@ async def on_message(message):
             voich = await discord.VoiceChannel.connect(message.author.voice.channel)
             voice_client = message.guild.voice_client
             num = random.randint(1, 5)
-            source = discord.FFmpegPCMAudio( str( num ) + ".mp3")
+            source = discord.FFmpegPCMAudio( str( num ) + ".mp3" )
             voice_client.play(source)
             time.sleep(2)
             await voich.disconnect()
@@ -162,7 +162,11 @@ async def on_message(message):
     if message.content == "!delchat":
         try:
             message.delete()
-            await message.channel.send("削除が完了しました")
+            message.delete()
+            message.delete()
+            message.delete()
+            message.delete()
+            await message.channel.send("削除が完了しました2")
         except AttributeError:
             await message.channel.send("うまくいかなかったよ～")
 
