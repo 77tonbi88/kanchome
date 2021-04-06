@@ -165,7 +165,7 @@ async def on_message(message):
                 await message.channel.send("これはデバックです1")
                 #async for msg in channel.history().get():
                 #msg = message.channel.history().get()
-                msgs = await message.channel.history().get(author = client.user)
+                msg = await message.channel.history().get(author = client.user)
                 await message.channel.send(msg)
                 await client.delete_messages(msg)
                 await message.channel.send("削除が完了しました")
