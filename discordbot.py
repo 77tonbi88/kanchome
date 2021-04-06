@@ -114,7 +114,7 @@ async def on_message(message):
     if message.content == "!ono":
         await message.channel.send("小野...ヒデアキ")
     if message.content == "!kodera":
-        await message.channel.send("コデラ...11")
+        await message.channel.send("コデラ...12")
     if message.content == "!katayama1":
         try:
             voich = await discord.VoiceChannel.connect(message.author.voice.channel)
@@ -163,14 +163,13 @@ async def on_message(message):
         try:
             if discord.utils.get(message.author.roles):
                 await message.channel.send("これはデバックです1")
-                msgs = await channel.history().flatten
-                async for msg in msgs:
-                    await message.channel.send("これはデバックです3")
-                    await TextChannel.delete_messages(msgs)
-                await message.channel.send("削除が完了しました7")
+                async for msg in channel.history():
+                    await message.channel.send(msg)
+                    #await TextChannel.delete_messages(msg)
+                await message.channel.send("削除が完了しました")
             else:
-                await message.channel.send("権限がありません7")
+                await message.channel.send("権限がありません")
         except AttributeError:
-            await message.channel.send("うまくいかなかったよ～7")
+            await message.channel.send("うまくいかなかったよ～")
 
 client.run(token)
