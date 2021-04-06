@@ -114,7 +114,7 @@ async def on_message(message):
     if message.content == "!ono":
         await message.channel.send("小野...ヒデアキ")
     if message.content == "!kodera":
-        await message.channel.send("コデラ...9")
+        await message.channel.send("コデラ...10")
     if message.content == "!katayama1":
         try:
             voich = await discord.VoiceChannel.connect(message.author.voice.channel)
@@ -164,7 +164,7 @@ async def on_message(message):
             if discord.utils.get(message.author.roles):
                 await message.channel.send("これはデバックです1")
                 msgs = []
-                async for x in client.logs_from( massage.channel , limit = 5):
+                async for x in client.logs_from(message.channel,limit = 5):
                     msgs.append(x)
                 await message.channel.send("これはデバックです3")
                 await message.channel.delete(msgs)
