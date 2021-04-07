@@ -164,13 +164,12 @@ async def on_message(message):
         try:
             if discord.utils.get(message.author.roles):
                 msgs = []
-                #msgs = [msg async for msg in message.channel.history(limit=10)]
-                msgs = message.channel.history(limit=10)
-                #await message.channel.delete_messages(msgs)
-                for msg in msgs:
-                    await message.channel.send(msg.author.id)
-                    if msgs[0].author.id == msg.author.id:
-                        await message.channel.delete_messages(msg)
+                msgs = [msg async for msg in message.channel.history(limit=10)]
+                await message.channel.delete_messages(msgs)
+                #for msg in msgs:
+                #    await message.channel.send(msg.author.id)
+                #    if msgs[0].author.id == msg.author.id:
+                #        await message.channel.delete_messages(msg)
                 await message.channel.send("削除が完了したよ～")
                 await asyncio.sleep(4)
                 await message.channel.purge(limit=1)
