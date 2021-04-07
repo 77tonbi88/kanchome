@@ -164,7 +164,7 @@ async def on_message(message):
         try:
             if discord.utils.get(message.author.roles):
                 msgs = []
-                msgs = [msg async for msg in message.channel.history(message.channel,limit=5)]
+                msgs = [msg async for msg in message.channel.history(limit=5)]
                 await message.channel.send(msgs)
                 await message.channel.delete_messages(msgs)
                 await message.channel.send("削除が完了したよ～")
