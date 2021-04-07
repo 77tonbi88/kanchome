@@ -164,11 +164,12 @@ async def on_message(message):
         try:
             if discord.utils.get(message.author.roles):
                 msgs = []
-                msgs = [msg async for msg in message.channel.history(limit=5)]
-                await message.channel.send(msgs)
-                await message.channel.delete_messages(msgs)
+                msgs = [msg async for msg in message.channel.history(limit=10)]
+                for msg in msgs:
+                    if cliant.user.id == msg.author.id:
+                        await message.channel.delete_messages(msg)
                 await message.channel.send("削除が完了したよ～")
-                await asyncio.sleep(2)
+                await asyncio.sleep(4)
                 await message.channel.purge(limit=1)
             else:
                 await message.channel.send("権限がありません")
