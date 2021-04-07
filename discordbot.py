@@ -114,7 +114,7 @@ async def on_message(message):
     if message.content == "!ono":
         await message.channel.send("小野...ヒデアキ")
     if message.content == "!kodera":
-        await message.channel.send("コデラ...18")
+        await message.channel.send("コデラ...19")
     if message.content == "!katayama1":
         try:
             voich = await discord.VoiceChannel.connect(message.author.voice.channel)
@@ -162,8 +162,10 @@ async def on_message(message):
     if message.content == "!delchat":
         try:
             if discord.utils.get(message.author.roles):
-                await message.channel.purge(limit=5)
-                await message.channel.send("削除が完了しました")
+                await message.channel.purge(limit=5,check=is_me)
+                await message.channel.send("削除が完了したよ～")
+                await asycio.sleep(5)
+                await message.channel.purge(limit=1)
             else:
                 await message.channel.send("権限がありません")
         except AttributeError:
