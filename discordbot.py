@@ -115,7 +115,7 @@ async def on_message(message):
     if message.content == "!ono":
         await message.channel.send("小野...ヒデアキ")
     if message.content == "!kodera":
-        await message.channel.send("コデラ...22")
+        await message.channel.send("コデラ...23")
     if message.content == "!katayama1":
         try:
             voich = await discord.VoiceChannel.connect(message.author.voice.channel)
@@ -165,6 +165,9 @@ async def on_message(message):
             if discord.utils.get(message.author.roles):
                 msgs = []
                 msgs = [msg async for msg in message.channel.history(limit=10)]
+                await message.channel.send(client.user.id)
+                await message.channel.send("2")
+                await message.channel.send(msg.author.id)
                 for msg in msgs:
                     if client.user.id == msg.author.id:
                         await message.channel.delete_messages(msg)
