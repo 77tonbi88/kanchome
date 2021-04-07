@@ -163,9 +163,11 @@ async def on_message(message):
     if message.content == "!delchat":
         try:
             if discord.utils.get(message.author.roles):
-                await message.channel.purge(limit=10)
+                msgs = []
+                msgs = [msg async for msg in abc.Messageable.history(message.channel,limit=5)]
+                await message.channel.delete_messages(msgs)
                 await message.channel.send("削除が完了したよ～")
-                await asyncio.sleep(15)
+                await asyncio.sleep(2)
                 await message.channel.purge(limit=1)
             else:
                 await message.channel.send("権限がありません")
