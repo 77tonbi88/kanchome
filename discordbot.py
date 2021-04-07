@@ -167,8 +167,8 @@ async def on_message(message):
                 msgs = [msg async for msg in message.channel.history(limit=10)]
                 await message.channel.send(client.user.id)
                 await message.channel.send("2")
-                await message.channel.send(msg.author.id)
                 for msg in msgs:
+                    await message.channel.send(msg.author.id)
                     if client.user.id == msg.author.id:
                         await message.channel.delete_messages(msg)
                 await message.channel.send("削除が完了したよ～")
