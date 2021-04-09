@@ -172,7 +172,7 @@ async def on_message(message):
                 for msg in msgs_del:
                     msgs.remove(msg)
                 await message.channel.delete_messages(msgs)
-                await message.channel.send("削除が完了したよ～")
+                await message.channel.send(message.author.name + "の削除が完了したよ～")
             else:
                 await message.channel.send("権限がありません")
         except AttributeError:
