@@ -164,7 +164,7 @@ async def on_message(message):
             if discord.utils.get(message.author.roles):
                 msgs = []
                 msgs_del = []
-                msgs = [msg async for msg in message.channel.history(limit=25)]
+                msgs = [msg async for msg in message.channel.history(limit=30)]
                 author_info = msgs[0].author.id
                 for msg in msgs:
                     if author_info != msg.author.id:
