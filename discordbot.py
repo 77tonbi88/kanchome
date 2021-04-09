@@ -170,14 +170,14 @@ async def on_message(message):
                 await message.channel.send(author_info)
                 await message.channel.send("-----------------")
                 for msg in msgs:
-                    await message.channel.send(msg.author.id)
-                await message.channel.send("-----------------")
-                for msg in msgs:
-                    #await message.channel.send(msg.author.id)
                     if author_info != msg.author.id:
                         msgs_del.append(msg)
+                    await message.channel.send(msg.author.id)
+                await message.channel.send("-----------------")
                 for msg in msgs_del:
+                    await message.channel.send(msg.author.id)
                     msgs.remove(msg)
+                await message.channel.send("-----------------")
                 for msg in msgs:
                     await message.channel.send(msg.author.id)
                 #await message.channel.delete_messages(msgs)
