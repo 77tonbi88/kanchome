@@ -166,21 +166,12 @@ async def on_message(message):
                 msgs_del = []
                 msgs = [msg async for msg in message.channel.history(limit=10)]
                 author_info = msgs[0].author.id
-                await message.channel.send("-----------------")
-                await message.channel.send(author_info)
-                await message.channel.send("-----------------")
                 for msg in msgs:
                     if author_info != msg.author.id:
                         msgs_del.append(msg)
-                    await message.channel.send(msg.author.id)
-                await message.channel.send("-----------------")
                 for msg in msgs_del:
-                    await message.channel.send(msg.author.id)
                     msgs.remove(msg)
-                await message.channel.send("-----------------")
-                for msg in msgs:
-                    await message.channel.send(msg.author.id)
-                #await message.channel.delete_messages(msgs)
+                await message.channel.delete_messages(msgs)
                 await message.channel.send("削除が完了したよ～")
             else:
                 await message.channel.send("権限がありません")
