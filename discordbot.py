@@ -168,7 +168,7 @@ async def on_message(message):
                 author_info = msgs[0].author.id
                 for msg in msgs:
                     await message.channel.send(msg.author.id)
-                    if auhtor_info != msg.author.id:
+                    if author_info != msg.author.id:
                         msgs.remove(msg)
                 await message.channel.delete_messages(msgs)
                 await message.channel.send("削除が完了したよ～")
