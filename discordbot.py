@@ -1,6 +1,5 @@
 import discord
 import time
-import asyncio
 import random
 import os
 
@@ -169,11 +168,13 @@ async def on_message(message):
                 await message.channel.send("-----------------")
                 await message.channel.send(author_info)
                 await message.channel.send("-----------------")
+                await message.channel.send(msgs.author.id)
                 for msg in msgs:
                     await message.channel.send(msg.author.id)
                     if author_info != msg.author.id:
                         msgs.remove(msg)
-                        await message.channel.send("#" + msg.author.id)
+                await message.channel.send("-----------------")        
+                await message.channel.send(msgs.author.id)
                 #await message.channel.delete_messages(msgs)
                 await message.channel.send("削除が完了したよ～")
             else:
