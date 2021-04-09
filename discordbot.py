@@ -175,8 +175,8 @@ async def on_message(message):
                 for msg in msgs:
                     #await message.channel.send(msg.author.id)
                     if author_info != msg.author.id:
-                        msg_del.append(msg)
-                for msg in msg_del:
+                        msgs_del.append(msg)
+                for msg in msgs_del:
                     msgs.remove(msg)
                 for msg in msgs:
                     await message.channel.send(msg.author.id)
