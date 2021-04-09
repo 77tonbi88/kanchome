@@ -167,7 +167,6 @@ async def on_message(message):
                 msgs = [msg async for msg in message.channel.history(limit=10)]
                 author_info = msgs[0].author.id
                 for msg in msgs:
-                    await message.channel.send(msg.author.id)
                     if author_info != msg.author.id:
                         msgs.remove(msg)
                 await message.channel.delete_messages(msgs)
