@@ -115,7 +115,7 @@ async def on_message(message):
     if message.content == "!ono":
         await message.channel.send("小野...ヒデアキ")
     if message.content == "!kodera":
-        await message.channel.send("コデラ...")
+        await message.channel.send("コデラ...1")
     if message.content == "!katayama1":
         try:
             voich = await discord.VoiceChannel.connect(message.author.voice.channel)
@@ -164,12 +164,17 @@ async def on_message(message):
         try:
             if discord.utils.get(message.author.roles):
                 msgs = []
-                msgs = [msg async for msg in message.channel.history(limit=30)]
+                msgs = [msg async for msg in message.channel.history(limit=10)]
                 author_info = msgs[0].author.id
+                await message.channel.send("-----------------")
+                await message.channel.send(author_info)
+                await message.channel.send("-----------------")
                 for msg in msgs:
+                    await message.channel.send(msg.author.id)
                     if author_info != msg.author.id:
                         msgs.remove(msg)
-                await message.channel.delete_messages(msgs)
+                        await message.channel.send("#" + msg.author.id)
+                #await message.channel.delete_messages(msgs)
                 await message.channel.send("削除が完了したよ～")
             else:
                 await message.channel.send("権限がありません")
