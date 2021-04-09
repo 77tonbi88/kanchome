@@ -163,6 +163,7 @@ async def on_message(message):
         try:
             if discord.utils.get(message.author.roles):
                 msgs = []
+                msgs_del = []
                 msgs = [msg async for msg in message.channel.history(limit=10)]
                 author_info = msgs[0].author.id
                 await message.channel.send("-----------------")
@@ -174,7 +175,9 @@ async def on_message(message):
                 for msg in msgs:
                     #await message.channel.send(msg.author.id)
                     if author_info != msg.author.id:
-                        msgs.remove(msg)
+                        msg_del.append(msg)
+                for msg in msg_del:
+                    msgs.remove(msg)
                 for msg in msgs:
                     await message.channel.send(msg.author.id)
                 #await message.channel.delete_messages(msgs)
