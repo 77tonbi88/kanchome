@@ -179,7 +179,7 @@ async def on_message(message):
         except AttributeError:
             await message.channel.send("うまくいかなかったよ～")
     if message.content == "!test":
-        await message.channel.send("3")
+        await message.channel.send("4")
     content_champ = message.content
     content_champ = re.sub('aatrox|エイトロ|えいとろ', "Aatrox", content_champ)
     content_champ = re.sub('ahri|アーリ|あーり', "Ahri", content_champ)
