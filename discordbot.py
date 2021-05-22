@@ -179,9 +179,9 @@ async def on_message(message):
         except AttributeError:
             await message.channel.send("うまくいかなかったよ～")
     if message.content == "!test":
-        await message.channel.send("5")
+        await message.channel.send("6")
     content_champ = message.content
     kanchome_text = lol_champion.change_champion_name(content_champ)
-    if kanchome_text == "":
+    if kanchome_text != "":
         await message.channel.send(kanchome_text)
 client.run(token)
