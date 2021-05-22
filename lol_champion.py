@@ -47,7 +47,7 @@ def change_champion_name(content_champ):
     content_champ = re.sub("ぐうぇん|はさみおんな", "Gwen", content_champ)
     content_champ = re.sub("へかりむ", "Hecarim", content_champ)
     content_champ = re.sub("はいまーでぃんがー|はいまー", "Heimerdinger", content_champ)
-    content_champ = re.sub("いらおい", "Illaoi", content_champ)
+    content_champ = re.sub("いらおい|吉田沙保里", "Illaoi", content_champ)
     content_champ = re.sub("いれりあ", "Irelia", content_champ)
     content_champ = re.sub("あいばーん", "Ivern", content_champ)
     content_champ = re.sub("じゃんな", "Janna", content_champ)
