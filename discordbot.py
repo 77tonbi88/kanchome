@@ -186,6 +186,6 @@ async def on_message(message):
         await message.channel.send(kanchome_text)
     
     if message.content.startswith('!l'):
-        await message.channel.send("チャンピオン" )
+        await message.channel.send("チャンピオン")
 
 client.run(token)
