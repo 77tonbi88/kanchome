@@ -184,4 +184,8 @@ async def on_message(message):
     kanchome_text = lol_champion.change_champion_name(content_champ)
     if kanchome_text != "":
         await message.channel.send(kanchome_text)
+    
+    if message.content.startswith('!l'):
+        await message.channel.send("チャンピオン" )
+
 client.run(token)
