@@ -125,7 +125,7 @@ async def on_message(message):
             time.sleep(10)
             await voich.disconnect()
         except AttributeError:
-            await message.channel.send("？？「女はサンドバック」")
+            await message.channel.send("？？「女はサンドバッグ」")
     if message.content == "!katayama2":
         try:
             voich = await discord.VoiceChannel.connect(message.author.voice.channel)
@@ -135,7 +135,7 @@ async def on_message(message):
             time.sleep(10)
             await voich.disconnect()
         except AttributeError:
-            await message.channel.send("？？「女はサンドバック」")
+            await message.channel.send("？？「女はサンドバッグ」")
     if message.content == "!katayama":
         num = random.randint(1, 4)
         if num == 1:
