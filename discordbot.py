@@ -115,14 +115,14 @@ async def on_message(message):
     if message.content == "!ono":
         await message.channel.send("小野...ヒデアキ")
     if message.content == "!kodera":
-        await message.channel.send("コデラ...2")
+        await message.channel.send("コデラ...")
     if message.content == "!katayama1":
         try:
             voich = await discord.VoiceChannel.connect(message.author.voice.channel)
             voice_client = message.guild.voice_client
             source = discord.FFmpegPCMAudio("onnna.mp3")
             voice_client.play(source)
-            time.sleep(10)
+            time.sleep(3)
             await voich.disconnect()
         except AttributeError:
             await message.channel.send("？？「女はサンドバッグ」")
@@ -132,7 +132,7 @@ async def on_message(message):
             voice_client = message.guild.voice_client
             source = discord.FFmpegPCMAudio("onnna2.mp3")
             voice_client.play(source)
-            time.sleep(10)
+            time.sleep(3)
             await voich.disconnect()
         except AttributeError:
             await message.channel.send("？？「女はサンドバッグ」")
@@ -144,7 +144,7 @@ async def on_message(message):
                 voice_client = message.guild.voice_client
                 source = discord.FFmpegPCMAudio("onnna.mp3")
                 voice_client.play(source)
-                time.sleep(10)
+                time.sleep(3)
                 await voich.disconnect()
             except AttributeError:
                 await message.channel.send("？？「女はサンドバッグ」")
