@@ -142,7 +142,7 @@ def change_champion_name(content_champ):
     content_champ = re.sub("ゔぇいん", "Vayne", content_champ)
     content_champ = re.sub("ゔぇいがー|べいがー", "Veigar", content_champ)
     content_champ = re.sub("ゔぇるこず|ゔぇる=こず", "VelKoz", content_champ)
-    content_champ = re.sub("ゔぁい|", "Vi", content_champ)
+    content_champ = re.sub("ゔぁい", "Vi", content_champ)
     content_champ = re.sub("ゔぇいご", "Viego", content_champ)
     content_champ = re.sub("びくたー|ゔぃくたー", "Viktor", content_champ)
     content_champ = re.sub("ぶらっどみあ|ぶらっど", "Vladimir", content_champ)
