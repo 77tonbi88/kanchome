@@ -116,7 +116,7 @@ def change_champion_name(content_champ):
     content_champ = re.sub("しゃこ", "Shaco", content_champ)
     content_champ = re.sub("しぇん", "Shen", content_champ)
     content_champ = re.sub("しばーな|しゔぁーな", "Shyvana", content_champ)
-    content_champ = re.sub("しんじど", "Singed", content_champ)
+    content_champ = re.sub("しんじど|はげぱんちまん", "Singed", content_champ)
     content_champ = re.sub("さいおん", "Sion", content_champ)
     content_champ = re.sub("しゔぃあ", "Sivir", content_champ)
     content_champ = re.sub("すかーな", "Skarner", content_champ)
@@ -161,7 +161,7 @@ def change_champion_name(content_champ):
     content_champ = re.sub("じぐす", "Ziggs", content_champ)
     content_champ = re.sub("じりあん", "Zilean", content_champ)
     content_champ = re.sub("ぞーい", "Zoe", content_champ)
-    content_champ = re.sub("ざいら|せかいいちかわいいおんな|いばらのゆりかご|茨のゆりかご|茨の楽園", "Zyra", content_champ)
+    content_champ = re.sub("ざいら|せかいいちかわいいおんなのこ|いばらのゆりかご|茨のゆりかご|茨の楽園", "Zyra", content_champ)
     for champion_name in lol_champion_list:
         if content_champ == "!" + champion_name:
             kanchome_string = "https://jp.op.gg/champion/" + champion_name + "/statistics/"
