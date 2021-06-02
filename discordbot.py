@@ -182,6 +182,7 @@ async def on_message(message):
         await message.channel.send("7")
     content_champ = message.content
     kanchome_text = ""
+    await message.channel.send("1" + kanchome_text)
     kanchome_text = lol_champion.change_champion_name(content_champ)
     await message.channel.send(kanchome_text)
     if kanchome_text != "":
