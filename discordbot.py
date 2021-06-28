@@ -14,7 +14,7 @@ token = os.environ['DISCORD_BOT_TOKEN']
 slash_client = SlashCommand(bot)
 
 
-@slash_client.slash(name="kanchome")
+@slash_client.slash(name="kanchome", guild_ids=guild_ids)
 async def _play_kanchome(message: SlashContext):
     try:
         voich = await discord.VoiceChannel.connect(message.author.voice.channel)
