@@ -2,8 +2,6 @@ import discord
 import time
 import random
 import os
-import lol_champion
-from discord.ext import commands
 from discord_slash import SlashCommand, SlashContext
 
 bot = discord.Client(intents=discord.Intents.all())
