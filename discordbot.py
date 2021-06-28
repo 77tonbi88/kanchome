@@ -6,15 +6,14 @@ import lol_champion
 from discord.ext import commands
 from discord_slash import SlashCommand, SlashContext
 
-guild_ids = [515139485206446090]
 bot = discord.Client(intents=discord.Intents.all())
 token = os.environ['DISCORD_BOT_TOKEN']
 # または:
 # bot = commands.Bot(command_prefix='@', intents=discord.Intents.all())
 slash_client = SlashCommand(bot)
+guild_id = [515139485206446090]
 
-
-@slash_client.slash(name="kanchome",guild_ids=guild_ids)
+@slash_client.slash(name="kanchome", guild_ids=guild_id)
 async def _play_kanchome(message: SlashContext):
     try:
         voich = await discord.VoiceChannel.connect(message.author.voice.channel)
