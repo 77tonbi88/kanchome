@@ -41,4 +41,4 @@ async def _play_kanchome(message: SlashContext):
 async def on_ready():
     print('kanchome ready.')
 
-bot.run(token)
+bot.run('DISCORD_BOT_TOKEN')
