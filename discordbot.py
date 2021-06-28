@@ -6,6 +6,7 @@ import lol_champion
 from discord.ext import commands
 from discord_slash import SlashCommand, SlashContext
 
+guild_ids = [515139485206446090]
 bot = discord.Client(intents=discord.Intents.all())
 token = os.environ['DISCORD_BOT_TOKEN']
 # または:
