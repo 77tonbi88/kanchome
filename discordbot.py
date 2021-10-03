@@ -196,8 +196,10 @@ async def on_message(message):
                 await message.channel.send("権限がありません")
         except AttributeError:
             await message.channel.send("うまくいかなかったよ～")
+    if massage.content == "!suman_on_ni_kill"
+        await client.send_file(message.channel, "suman_on_ni_kill.png")
     if message.content == "!test":
-        await message.channel.send("")
+        await message.channel.send("9")
     content_champ = message.content
     kanchome_text = ""
     kanchome_text = lol_champion.change_champion_name(content_champ)
