@@ -178,8 +178,26 @@ async def on_message(message):
                 await message.channel.send("権限がありません")
         except AttributeError:
             await message.channel.send("うまくいかなかったよ～")
+    if message.content == "!delchat_katayama":
+        try:
+            if discord.utils.get(message.author.roles):
+                msgs = []
+                msgs_del = []
+                msgs = [msg async for msg in message.channel.history(limit=30)]
+                author_info = 894193216709091330
+                for msg in msgs:
+                    if author_info != msg.author.id:
+                        msgs_del.append(msg)
+                for msg in msgs_del:
+                    msgs.remove(msg)
+                await message.channel.delete_messages(msgs)
+                await message.channel.send("たたきっくの削除が完了したよ～")
+            else:
+                await message.channel.send("権限がありません")
+        except AttributeError:
+            await message.channel.send("うまくいかなかったよ～")
     if message.content == "!test":
-        await message.channel.send("8")
+        await message.channel.send("")
     content_champ = message.content
     kanchome_text = ""
     kanchome_text = lol_champion.change_champion_name(content_champ)
