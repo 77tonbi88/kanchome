@@ -154,6 +154,16 @@ async def on_message(message):
             await message.channel.send("？？「女は殴るためにいる」")
         elif num == 4:
             await message.channel.send("？？「女はサンドバッグ」")
+    if message.content == "!umasugi":
+        try:
+            voich = await discord.VoiceChannel.connect(message.author.voice.channel)
+            voice_client = message.guild.voice_client
+            source = discord.FFmpegPCMAudio("umasugi.mp3")
+            voice_client.play(source)
+            time.sleep(3)
+            await voich.disconnect()
+        except AttributeError:
+            await message.channel.send("？？「komorimoriがうますぎるぅー！！」")
     if message.content == "!yamanaka":
         num = random.randint(1, 2)
         if num == 1:
