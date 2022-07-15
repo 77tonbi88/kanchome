@@ -163,7 +163,7 @@ async def on_message(message):
             time.sleep(3)
             await voich.disconnect()
         except AttributeError:
-            await message.channel.send("？？「komorimoriがうますぎるぅー！！」")
+            await message.channel.send("？？「komorimorimoriがうますぎるぅー！！」")
     if message.content == "!yamanaka":
         num = random.randint(1, 2)
         if num == 1:
