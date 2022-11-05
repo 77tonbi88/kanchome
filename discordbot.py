@@ -210,6 +210,12 @@ async def on_message(message):
         await client.send_file(message.channel, "suman_on_ni_kill.png")
     if message.content == "!juge":
         await message.channel.send(file=discord.File("juge.png"))
+    if mesasge.content == "!katayamarobo":
+        await message.channel.send(":Katayama_seibyo: :Katayama_seibyo2: :Katayama_seibyo3:\
+                                    :Katayama_seibyo2: :katayama_free2: :Katayama_seibyo2:\
+                                    🤟 :Katayama_seibyo2: 🤟\
+                                    :Katayama_seibyo3: :Katayama_seibyo2: :Katayama_seibyo:\
+                                    🦵 　🦿")
     if message.content == "!test":
         await message.channel.send("10")
     content_champ = message.content
