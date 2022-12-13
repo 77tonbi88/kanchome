@@ -4,11 +4,11 @@ import random
 import os
 import lol_champion
 
-client = discord.Client()
+client = discord.Client(intents)
 token = os.environ['DISCORD_BOT_TOKEN']
 
 @client.event
-async def on_ready(intents):
+async def on_ready():
     print('Logged in as')
     print(client.user.name)
     print(client.user.id)
