@@ -3,9 +3,14 @@ import time
 import random
 import os
 import lol_champion
+from flask import Flask
 
-client = discord.Client()
-token = os.environ['DISCORD_BOT_TOKEN']
+app = Flask(__name__)
+
+@app.route('/')
+def client():
+ client = discord.Client()
+ token = os.environ['DISCORD_BOT_TOKEN']
 
 
 @client.event
