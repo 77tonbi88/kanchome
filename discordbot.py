@@ -4,7 +4,7 @@ import random
 import os
 import lol_champion
 
-client = discord.Client(intents)
+client = discord.Client()
 token = os.environ['DISCORD_BOT_TOKEN']
 
 @client.event
