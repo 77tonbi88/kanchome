@@ -8,7 +8,7 @@ client = discord.Client()
 token = os.environ['DISCORD_BOT_TOKEN']
 
 @client.event
-async def on_ready():
+async def on_ready(intents):
     print('Logged in as')
     print(client.user.name)
     print(client.user.id)
